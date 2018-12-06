@@ -12,7 +12,8 @@ namespace SimpleTCPServer
     {
         static void Main(string[] args)
         {
-            
+            Controller x = new Controller();
+            x.run();
         }
     }
 }

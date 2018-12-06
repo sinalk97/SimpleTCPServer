@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
@@ -23,9 +24,41 @@ namespace SimpleTCPServer
 
         #region Constructors
         public Connection(int port)
+
         {
-            this.Server = new TcpListener(port);
+            this.Server = new TcpListener(IPAddress.Any, port);
         }
+
+
         #endregion
+
+        #region Workers
+        public void startServer()
+        {
+            Thread serverThread = new Thread(new ThreadStart(runServer));
+            serverThread.Start();
+        }
+
+        private void runServer()
+        {
+            bool bedingung = true;
+            this.Server.Start();
+            while (bedingung)
+            {
+                try
+                {
+                    this.Self = this.Server.AcceptTcpClient();
+                    Console.WriteLine("Connected to: " + this.Self.Client.LocalEndPoint);
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine(ex.Message+ "/ press any key to exit...");
+                    Console.Read();
+                    bedingung = false;
+                }
+            }
+        } 
+        
+	    #endregion
     }
 }

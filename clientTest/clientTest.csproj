@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AA144676-12B8-487C-8E13-C9F026E81D07}</ProjectGuid>
+    <ProjectGuid>{8356C7A5-E4E4-43D3-A41A-02157C48E77D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SimpleTCPServer</RootNamespace>
-    <AssemblyName>SimpleTCPServer</AssemblyName>
+    <RootNamespace>clientTest</RootNamespace>
+    <AssemblyName>clientTest</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,9 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connection.cs" />
-    <Compile Include="Controller.cs" />
-    <Compile Include="main.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
