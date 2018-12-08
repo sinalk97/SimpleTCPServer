@@ -12,8 +12,15 @@ namespace SimpleTCPServer
     {
         static void Main(string[] args)
         {
-            Controller x = new Controller();
-            x.run();
+            if (args.Length == 0)
+            {
+                Controller x = new Controller();
+                x.run();
+            }
+            else
+            {
+                Console.WriteLine("this software does not take console arguments");
+            }
         }
     }
 }
