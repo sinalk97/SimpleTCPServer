@@ -60,7 +60,7 @@ namespace SimpleTCPServer
 
         }
 
-        public void sendToAll(string value)
+        private void sendToAll(string value)
         {
             NetworkStream networkStream = this.Self.GetStream();
             byte[] buffer = Encoding.UTF8.GetBytes(value);
