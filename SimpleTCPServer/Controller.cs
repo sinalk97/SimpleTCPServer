@@ -26,14 +26,22 @@ namespace SimpleTCPServer
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Message + "\n");
             }
             this.serverStart();
         }
 
         public void serverStart()
         {
-            this.Con.startServer();
+            try
+            {
+                this.Con.startServer();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message + "\n");
+                this.run();
+            }
         }
     }
 }
